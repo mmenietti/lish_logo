@@ -1,0 +1,148 @@
+\documentclass{article}
+
+% Dependencies
+%-------------------
+%region
+%% Package includes
+
+%%% Page Layout Customization
+\usepackage{geometry}
+
+%%% Support for hyperlinks and pdf metadata
+\usepackage{hyperref}
+
+%%%
+\usepackage{graphicx}
+
+%% Code files
+%%% LISH logo design commands
+\input{./mm_configuration/lish_design.tex}
+
+%endregion
+
+% Configuration
+%-------------------
+%region
+%% tikz Externalization
+% \usetikzlibrary{external}
+
+% \tikzexternalize[prefix=./external_figures/]
+
+%% Page layout
+\geometry{driver=xetex, margin=0.5in}
+\pagestyle{empty}
+
+%endregion
+
+% Metadata
+%-------------------
+%region
+%% Commands to store metadata string
+\newcommand{\titleStr}{LISH Logo Designs}
+\newcommand{\authorStr}{Michael Menietti}
+\newcommand{\dateStr}{2024/05/11}
+\newcommand{\keywordStr}{}
+
+%% Set Latex document metadata
+\author{\authorStr}
+\title{\titleStr}
+\date{\dateStr}
+
+%% Set pdf file metadata
+\hypersetup{%
+	pdftitle={\titleStr},
+	pdfauthor={\authorStr},
+	pdfkeywords={\keywordStr}
+}
+
+%endregion
+
+\begin{document}
+  % Original
+  %-------------------
+  \section{Original}
+
+  \subsection{LISH Logo PDF}
+  \fbox{\includegraphics{./media/lish_logo.pdf}}
+
+  \subsection{LISH Large Text}
+  \fbox{\includegraphics{./media/LISH_largetext.png}}
+
+  \subsection{LISH No Text}
+  \fbox{\includegraphics{./media/LISH_notext.png}}
+
+  \subsection{LISH Small Text}
+  \fbox{\includegraphics{./media/LISH_smalltext.png}}
+
+  % tikz design
+  %-------------------
+  \section{Latin Modern}
+
+  \subsection{Latin Modern Roman}
+  \fbox{\lishLogo{Latin Modern Roman}{72pt}[text]}%
+  \fbox{\lishLogo{Latin Modern Roman}{72pt}[noText]}%
+
+  \subsection{Latin Modern Sans}
+  \fbox{\lishLogo{Latin Modern Sans}{72pt}[text]}%
+  \fbox{\lishLogo{Latin Modern Sans}{72pt}[noText]}%
+
+  \subsection{Latin Modern Mono}
+  \fbox{\lishLogo{Latin Modern Mono}{72pt}[text]}%
+  \fbox{\lishLogo{Latin Modern Mono}{72pt}[noText]}%
+
+  \section{Roboto}
+
+  \subsection{Roboto Serif}
+  \fbox{\lishLogo{Roboto Serif}{72pt}[text]}%
+  \fbox{\lishLogo{Roboto Serif}{72pt}[noText]}%
+
+  \subsection{Roboto}
+  \fbox{\lishLogo{Roboto}{72pt}[text]}%
+  \fbox{\lishLogo{Roboto}{72pt}[noText]}%
+
+  \subsection{Roboto Mono}
+  \fbox{\lishLogo{Roboto Mono}{72pt}[text]}%
+  \fbox{\lishLogo{Roboto Mono}{72pt}[noText]}%
+
+  \section{MS Office 2003}
+
+  \subsection{Times New Roman}
+  \fbox{\lishLogo{Times New Roman}{72pt}[text]}%
+  \fbox{\lishLogo{Times New Roman}{72pt}[noText]}%
+
+  \subsection{Arial}
+  \fbox{\lishLogo{Arial}{72pt}[text]}%
+  \fbox{\lishLogo{Arial}{72pt}[noText]}%
+
+  \subsection{Courier New}
+  \fbox{\lishLogo{Courier New}{72pt}[text]}%
+  \fbox{\lishLogo{Courier New}{72pt}[noText]}%
+
+  \section{MS Office 2007}
+
+  \subsection{Cambria}
+  \fbox{\lishLogo{Cambria}{72pt}[text]}%
+  \fbox{\lishLogo{Cambria}{72pt}[noText]}%
+
+  \subsection{Calibri}
+  \fbox{\lishLogo{Calibri}{72pt}[text]}%
+  \fbox{\lishLogo{Calibri}{72pt}[noText]}%
+
+  \subsection{Consolas}
+  \fbox{\lishLogo{Consolas}{72pt}[text]}%
+  \fbox{\lishLogo{Consolas}{72pt}[noText]}%
+
+  \section{MS Office 2023}
+
+  \subsection{Aptos Serif}
+  \fbox{\lishLogo{Aptos Serif}{72pt}[text]}%
+  \fbox{\lishLogo{Aptos Serif}{72pt}[noText]}%
+  
+  \subsection{Aptos}
+  \fbox{\lishLogo{Aptos}{72pt}[text]}%
+  \fbox{\lishLogo{Aptos}{72pt}[noText]}%
+  
+  \subsection{Aptos Mono}
+  \fbox{\lishLogo{Aptos Mono}{72pt}[text]}%
+  \fbox{\lishLogo{Aptos Mono}{72pt}[noText]}%
+\end{document}

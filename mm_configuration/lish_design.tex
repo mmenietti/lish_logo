@@ -1,0 +1,311 @@
+% Dependencies
+%-------------------
+%region
+%% Support for extensive color commands
+\usepackage{xcolor} 
+
+%% Support for nice graphics
+\usepackage{tikz} 
+
+%% Support for Roboto font by Google
+\usepackage{roboto}
+
+%% Enables easy font selection with Xelatex
+\usepackage{fontspec}
+
+%% Command control flow
+\usepackage{ifthen}
+\usepackage{xifthen}
+
+%endregion
+
+% Colors
+%----------------------------------------------------------------------------------
+\definecolor{lishRed}{rgb}{0.6588, 0.1098, 0.1882}
+\colorlet{lishGray}{gray!80}
+
+%---------------------------------------------
+% Logo, Generic
+%---------------------------------------------
+% 
+% Arguments
+% m - font name
+% m - height of logo 
+% O{text} - {text,noText} whether to include the longer lab name text
+\NewDocumentCommand{\lishLogo}{m m O{text}}{
+	\resizebox*{!}{#2}{
+		\begin{tikzpicture}
+			%---------------------------------------------
+			% Latin Modern
+			%---------------------------------------------
+				
+			%% Latin Modern Roman
+			%---------------------------------------------
+			\ifthenelse{\equal{Latin Modern Roman}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] (19pt, -4pt)--(19pt, -24pt)--(-14pt, -24pt)--(-14pt, 40pt)--(50pt, 40pt)--(50pt, 20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Latin Modern Roman}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (24pt, -4pt) {\parbox{132pt}{\fontsize{12}{12}\fontspec{Latin Modern Roman}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (160pt,44pt);
+			}
+			{}
+
+			%% Latin Modern Sans
+			%---------------------------------------------
+			\ifthenelse{\equal{Latin Modern Sans}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] (17pt, -4pt)--(17pt, -24pt)--(-17pt, -24pt)--(-17pt, 40pt)--(47pt, 40pt)--(47pt, 20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Latin Modern Sans}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (20pt, -4pt) {\parbox{124pt}{\fontsize{12}{12}\fontspec{Latin Modern Sans}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-20pt,-28pt) grid (144pt,44pt);
+			}
+			{}
+
+			%% Latin Modern Mono
+			%---------------------------------------------
+			\ifthenelse{\equal{Latin Modern Mono}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] (20pt, -4pt)--(20pt, -24pt)--(-14pt, -24pt)--(-14pt, 40pt)--(50pt, 40pt)--(50pt, 20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Latin Modern Mono}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (28pt, -4pt) {\parbox{152pt}{\fontsize{12}{12}\fontspec{Latin Modern Mono}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (184pt,44pt);
+			}
+			{}
+
+			%---------------------------------------------
+			% Roboto
+			%---------------------------------------------
+
+			%% Roboto Serif
+			%---------------------------------------------
+			\ifthenelse{\equal{Roboto Serif}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners]
+					( 21pt,  -4pt)--( 21pt, -28pt)--
+					(-13pt, -28pt)--(-13pt,  44pt)--
+					( 59pt,  44pt)--( 59pt,  20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Roboto Serif}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (28pt, -4pt) {\parbox{160pt}{\fontsize{12}{12}\fontspec{Roboto Serif}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (192pt,44pt);
+			}
+			{}
+
+			%% Roboto
+			%---------------------------------------------
+			\ifthenelse{\equal{Roboto}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners]
+					( 17pt,  -4pt)--( 17pt, -24pt)--
+					(-14pt, -24pt)--(-14pt,  40pt)--
+					( 51pt,  40pt)--( 51pt,  20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Roboto}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (22pt, -4pt) {\parbox{134pt}{\fontsize{12}{12}\fontspec{Roboto}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (160pt,44pt);
+			}
+			{}
+
+			%% Roboto Mono
+			%---------------------------------------------
+			\ifthenelse{\equal{Roboto Mono}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners]
+					(23pt,  -4pt)--( 23pt, -24pt)--
+					(-6pt, -24pt)--( -6pt,  40pt)--
+					(58pt,  40pt)--( 58pt,  20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Roboto Mono}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (32pt, -4pt) {\parbox{176pt}{\fontsize{12}{12}\fontspec{Roboto Mono}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-8pt,-28pt) grid (212pt,44pt);
+			}
+			{}
+
+			%---------------------------------------------
+			% MS Office 2003
+			%---------------------------------------------
+				
+			%% Times New Roman
+			%---------------------------------------------
+			\ifthenelse{\equal{Times New Roman}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] (20pt, -4pt)--(20pt, -24pt)--(-12pt, -24pt)--(-12pt, 40pt)--(52pt, 40pt)--(52pt, 20pt);	
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Times New Roman}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (26pt, -4pt) {\parbox{124pt}{\fontsize{12}{12}\fontspec{Times New Roman}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (156pt,44pt);
+			}
+			{}
+
+			%% Arial
+			%---------------------------------------------
+			\ifthenelse{\equal{Arial}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] (18pt, -4pt)--(18pt, -24pt)--(-11pt, -24pt)--(-11pt, 40pt)--(53pt, 40pt)--(53pt, 20pt);	
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Arial}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (23pt, -4pt) {\parbox{132pt}{\fontsize{12}{12}\fontspec{Arial}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (160pt,44pt);
+			}
+			{}
+
+			%% Courier New
+			%---------------------------------------------
+			\ifthenelse{\equal{Courier New}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] (23pt, -4pt)--(23pt, -24pt)--(-7pt, -24pt)--(-7pt, 40pt)--(57pt, 40pt)--(57pt, 20pt);	
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Courier New}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (32pt, -4pt) {\parbox{180pt}{\fontsize{12}{12}\fontspec{Courier New}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (212pt,44pt);
+			}
+			{}
+
+			%---------------------------------------------
+			% MS Office 2007
+			%---------------------------------------------
+
+			%% Cambria
+			%---------------------------------------------
+			\ifthenelse{\equal{Cambria}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] 
+				( 18pt,  -4pt)--( 18pt, -24pt)--
+				(-16pt, -24pt)--(-16pt,  40pt)--
+				( 48pt,  40pt)--( 48pt,  20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Cambria}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (24pt, -4pt) {\parbox{132pt}{\fontsize{12}{12}\fontspec{Cambria}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (160pt,44pt);
+			}
+			{}
+
+			%% Calibri
+			%---------------------------------------------
+			\ifthenelse{\equal{Calibri}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] 
+					( 14pt,  -4pt)--( 14pt, -24pt)
+				--(-22pt, -24pt)--(-22pt,  40pt)
+				--( 42pt,  40pt)--( 42pt,  20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Calibri}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (18pt, -4pt) {\parbox{124pt}{\fontsize{12}{12}\fontspec{Calibri}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};
+				}
+				{}
+				% \draw[help lines, step=4pt] (-24pt,-28pt) grid (144pt,44pt);
+			}
+			{}
+
+			%% Consolas
+			%---------------------------------------------
+			\ifthenelse{\equal{Consolas}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] 
+				( 21pt,  -4pt)--( 21pt, -24pt)--
+				(-10pt, -24pt)--(-10pt,  40pt)--
+				( 54pt,  40pt)--( 54pt,  20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Consolas}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (28pt, -4pt) {\parbox{164pt}{\fontsize{12}{12}\fontspec{Consolas}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};    
+				}
+				{}
+				% \draw[help lines, step=4pt] (-12pt,-28pt) grid (192pt,44pt);
+			}
+			{}
+
+			%---------------------------------------------
+			% MS Office 2023
+			%---------------------------------------------
+
+			%% Aptos Serif
+			%---------------------------------------------
+			\ifthenelse{\equal{Aptos Serif}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] 
+					( 19pt,  -4pt)--( 19pt, -24pt)--
+					(-14pt, -24pt)--(-14pt,  40pt)--
+					( 53pt,  40pt)--( 53pt,  20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Aptos Serif}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (26pt, -4pt) {\parbox{138pt}{\fontsize{12}{12}\fontspec{Aptos Serif}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};    
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (164pt,44pt);	
+			}
+			{}
+
+			%% Aptos
+			%---------------------------------------------
+			\ifthenelse{\equal{Aptos}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] 
+				( 16pt,  -4pt)--( 16pt, -24pt)--
+				(-15pt, -24pt)--(-15pt,  40pt)--
+				( 49pt,  40pt)--( 49pt,  20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Aptos}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (20pt, -4pt) {\parbox{128pt}{\fontsize{12}{12}\fontspec{Aptos}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};    
+				}
+				{}
+				% \draw[help lines, step=4pt] (-16pt,-28pt) grid (152pt,44pt);
+			}
+			{}
+
+			%% Aptos Mono
+			%---------------------------------------------
+			\ifthenelse{\equal{Aptos Mono}{#1}}
+			{
+				\draw[lishRed, line width=2pt, rounded corners] 
+				(23pt,  -4pt)--(23pt, -24pt)--
+				(-6pt, -24pt)--(-6pt,  40pt)--
+				(58pt,  40pt)--(58pt,  20pt);
+				\node[anchor=south west,inner sep=0mm] at (0pt, 0pt) {\fontsize{24}{24}\fontspec{Aptos Mono}\addfontfeature{LetterSpace=4.0pt}\textcolor{lishGray}{LISH}};
+				\ifthenelse{\equal{text}{#3}}
+				{
+					\node[anchor=north west,inner sep=0mm] at (32pt, -4pt) {\parbox{180pt}{\fontsize{12}{12}\fontspec{Aptos Mono}\color{lishGray}Laboratory for Innovation\\Science at Harvard}};    
+				}
+				{}
+				% \draw[help lines, step=4pt] (-8pt,-28pt) grid (212pt,44pt);
+			}
+			{}
+		\end{tikzpicture}
+	}
+}
